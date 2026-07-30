@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Entity
 @NoArgsConstructor
-public class WiseSaying {
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // int
