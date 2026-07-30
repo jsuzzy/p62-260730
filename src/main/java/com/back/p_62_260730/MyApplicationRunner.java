@@ -1,4 +1,4 @@
-package com.back.p_62_260730.domain.wiseSaying.entity;
+package com.back.p_62_260730;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
