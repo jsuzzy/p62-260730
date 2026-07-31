@@ -5,6 +5,7 @@ import com.back.p_62_260730.domain.post.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -20,6 +21,18 @@ public class PostService {
 
     }
 
+    public void modify(Post post, String title, String body) {
+        post.setTitle(title);
+        post.setBody(body);
+        post.setModifyDate(LocalDateTime.now());
+
+        postRepository.save(post);
+    }
+
+    public void delete(Post post) {
+        postRepository.delete(post);
+    }
+
     public Optional<Post> findById(int id){
         return postRepository.findById(id); // 트랜잭션 시작 -> select * form post -> 트랜잭션 종료 -> commit
         //repository가 제공하는 메서드 단위로 트랜잭션이 잡힘
@@ -29,7 +42,5 @@ public class PostService {
         return postRepository.count();
     }
 
-    public void delete(Post post) {
-        postRepository.delete(post);
-    }
+
 }
