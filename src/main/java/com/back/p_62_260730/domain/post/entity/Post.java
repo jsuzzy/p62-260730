@@ -9,16 +9,17 @@ import lombok.*;
 @Setter
 @Getter
 @Entity
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // int
-    private final String title; // varchar(255)
-    private final String body; // varchar(255)
+    private String title; // varchar(255)
+    private String body; // varchar(255)
 
-    public Post(){
-        title = "";
-        body = "";
+
+    public Post(String title, String body){
+        this.title = title;
+        this.body = body;
     }
 }
