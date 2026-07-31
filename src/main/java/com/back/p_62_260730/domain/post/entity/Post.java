@@ -4,7 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -16,10 +20,15 @@ public class Post {
     private int id; // int
     private String title; // varchar(255)
     private String body; // varchar(255)
+    private LocalDateTime createDate;
+    private LocalDateTime modifyDate;
 
 
     public Post(String title, String body){
         this.title = title;
         this.body = body;
+        this.createDate = LocalDateTime.now();
+        this.modifyDate = createDate;
+
     }
 }
