@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Configuration //빈 등록을 위한 클래스
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class BaseInit {
 
     @Autowired
@@ -49,7 +50,6 @@ public class BaseInit {
 
     }
 
-    @Transactional
     void work2() {
         postService.findById(1);
         // select * from post where id = 1;
