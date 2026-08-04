@@ -1,5 +1,6 @@
 package com.back.p_62_260730.domain.post.post.service;
 
+import com.back.p_62_260730.domain.post.member.entity.Member;
 import com.back.p_62_260730.domain.post.post.entity.Post;
 import com.back.p_62_260730.domain.post.post.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +14,8 @@ public class PostService {
 
     private final PostRepository postRepository;
 
-    public Post write(int authorId, String title, String body){
-        Post post1 = new Post(authorId, title, body);
+    public Post write(Member author, String title, String body){
+        Post post1 = new Post(author, title, body);
         return postRepository.save(post1); //insert into ... => sql db 반영하려면 commit
         //기본적으로 jpa가 제공하는 기능은 그 자체로 트랜잭션 범위를 갖는다.
 
