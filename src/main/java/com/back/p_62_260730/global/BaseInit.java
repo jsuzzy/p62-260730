@@ -8,10 +8,12 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.Transactional;
 
 @Configuration //빈 등록을 위한 클래스
 @RequiredArgsConstructor
+@Profile("dev")
 public class BaseInit {
 
     @Autowired
