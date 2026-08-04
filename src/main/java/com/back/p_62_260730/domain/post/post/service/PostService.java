@@ -13,8 +13,8 @@ public class PostService {
 
     private final PostRepository postRepository;
 
-    public Post write(String title, String body){
-        Post post1 = new Post(title, body);
+    public Post write(int authorId, String title, String body){
+        Post post1 = new Post(authorId, title, body);
         return postRepository.save(post1); //insert into ... => sql db 반영하려면 commit
         //기본적으로 jpa가 제공하는 기능은 그 자체로 트랜잭션 범위를 갖는다.
 

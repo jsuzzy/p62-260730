@@ -1,5 +1,6 @@
 package com.back.p_62_260730.global;
 
+import com.back.p_62_260730.domain.post.member.entity.Member;
 import com.back.p_62_260730.domain.post.member.service.MemberService;
 import com.back.p_62_260730.domain.post.post.entity.Post;
 import com.back.p_62_260730.domain.post.post.service.PostService;
@@ -48,16 +49,15 @@ public class DevBaseInit {
             return;
         }
 
-        memberService.join("systemUser", "시스템");
-        memberService.join("adminUser", "관리자");
-        memberService.join("user1", "유저1");
-        memberService.join("user2", "유저2");
-        memberService.join("user3", "유저3");
+        Member m1 = memberService.join("systemUser", "시스템");
+        Member m2 = memberService.join("adminUser", "관리자");
+        Member m3 = memberService.join("user1", "유저1");
+        Member m4 = memberService.join("user2", "유저2");
+        Member m5 = memberService.join("user3", "유저3");
 
 
-        postService.write("제목1", "내용1");
-
-        postService.write("제목2", "내용2");
+        postService.write(m3.getId(), "제목1", "내용1");
+        postService.write(m3.getId(), "제목2", "내용2");
 
     }
 
