@@ -36,4 +36,9 @@ public class Post {
         this.modifyDate = createDate;
 
     }
+
+    public void modify(String title, String body){
+        this.title = title;
+        this.body = body;
+    }
 }
